@@ -8,10 +8,8 @@ public class Spawner : MonoBehaviour
     private float _delay = 2f;
     private Pool _pool;
 
-    private void Awake()
-    {
-        _pool = new Pool(_prefab);
-    }
+    private void Awake() => _pool = new Pool(_prefab);
+
 
     private void OnEnable()
     {

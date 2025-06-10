@@ -1,26 +1,34 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(AnimatorController))]
+[RequireComponent(typeof(ChangerStatus))]
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Taker _taker;
-    [SerializeField] private Base _base; 
+    [SerializeField] private ChangerStatus _changerStatus;
+    [SerializeField] private Base _startBase; 
     [SerializeField] private Spawnpoint _spawnpoint;
 
     private Vector3 _nullVector;
     private Vector3 _targetPosition;
-    private AnimatorController _controller;
+    private Base _base;
+    //private AnimatorController _controller;
 
-    public event Action ResourceIsFound;
-    public event Action StatusChanged;
-    public event Action ResourceIsDelivered;
+    //public event Action ResourceIsFound;
+    //public event Action StatusChanged;
+    //public event Action ResourceIsDelivered;
 
     private void Awake()
     {
-        _controller = GetComponent<AnimatorController>();
+        _base = _startBase;
+        //_controller = GetComponent<AnimatorController>();
         _nullVector = new Vector3(0, 0, 0);
+    }
+
+    public void SetBase(Base newBase)
+    {
+        _base = newBase;
     }
 
     private void Update()
@@ -29,16 +37,18 @@ public class Mover : MonoBehaviour
         {
             if ((transform.position == _targetPosition) && (!_taker.IsGrabbing))
             {
-                ResourceIsFound?.Invoke();
+                _changerStatus.FindResource();
+                //ResourceIsFound?.Invoke();
                 _targetPosition = _spawnpoint.transform.position;
             }
             else if((transform.position == _spawnpoint.transform.position) && (_taker.IsGrabbing))
             {
-                ResourceIsDelivered?.Invoke();
-                _controller.DeactiveRunning();
+                _changerStatus.DeliverResource(_base);
+                //ResourceIsDelivered?.Invoke();
+                //_controller.SetupRunning(false);
                 _targetPosition = _nullVector;
-                _base.AddScore();
-                StatusChanged?.Invoke();
+                //_base.AddScore();
+                //StatusChanged?.Invoke();
             }
             else
             {
@@ -47,9 +57,10 @@ public class Mover : MonoBehaviour
         }
     }
 
-    public void GetPosition(Vector3 position)
+    public void ChangePosition(Vector3 position)
     {
         _targetPosition = position;
-        _controller.ActiveRunning();
+        _changerStatus.TurnOnRunning();
+        //_controller.SetupRunning(true);
     }
 }

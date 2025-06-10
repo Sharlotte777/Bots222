@@ -1,24 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Scanner))]
-[RequireComponent(typeof(Sender))]
 [RequireComponent(typeof(ScoreCounter))]
 public class Base : MonoBehaviour
 {
     [SerializeField] private List<Robot> _units;
 
     private ScoreCounter _scoreCounter;
-    private Scanner _scanner;
-    private Sender _sender;
+    //private Scanner _scanner;
+    //private Sender _sender;
+
+    public string Name { get; private set; }
+
+    public List<Robot> GetUnits() => _units;
 
     private void Awake()
     {
-        _scanner = GetComponent<Scanner>();
+        //_scanner = GetComponent<Scanner>();
         _scoreCounter = GetComponent<ScoreCounter>();
-        _sender = GetComponent<Sender>();
-        _sender.GetUnits(_units);
-        _scanner.GetSender(_sender);
+        //_sender = GetComponent<Sender>();
+        //_sender.AssignUnits(_units);
+        //_scanner.AssignSender(_sender);
     }
 
     public int GetScore() => _scoreCounter.Score;

@@ -6,18 +6,9 @@ public class AnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    public static readonly int IsRunning = Animator.StringToHash("Run");
 
-    public void ActiveRunning()
-    {
-        _animator.SetBool("Run", true);
-    }
+    private void Awake() => _animator = GetComponent<Animator>();
 
-    public void DeactiveRunning()
-    {
-        _animator.SetBool("Run", false);
-    }
+    public void SetupRunning(bool isRunning) => _animator.SetBool(IsRunning, isRunning);
 }

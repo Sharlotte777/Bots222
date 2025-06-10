@@ -1,12 +1,169 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GIT\\Bots\\Bots\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\base\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\base\\sender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\sender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\resource\\storage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resource\\storage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\base\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\pool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\unit\\changerstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\changerstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\unit\\mover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\mover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\unit\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\unit\\taker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\taker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Pool.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Pool.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Pool.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Pool.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Pool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:43:45.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Taker.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Taker.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Taker.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Taker.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Unit\\Taker.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:26:12.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChangerStatus.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\ChangerStatus.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\ChangerStatus.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\ChangerStatus.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Unit\\ChangerStatus.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:13:17.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sender.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Sender.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\Sender.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Sender.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base\\Sender.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAA1wB0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:10:31.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Storage.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Resource\\Storage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Resource\\Storage.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Resource\\Storage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Resource\\Storage.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T21:13:18.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scanner.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Scanner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\Scanner.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Scanner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base\\Scanner.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA4wCEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T11:03:57.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Mover.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Mover.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Mover.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Mover.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Unit\\Mover.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T21:10:08.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Robot.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Robot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Robot.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Unit\\Robot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Unit\\Robot.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywBoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:15:09.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Base.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Base.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\Base.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Base.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base\\Base.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T13:17:18.337Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
