@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Storage))]
+[RequireComponent(typeof(Sender))]
 public class Scanner : MonoBehaviour
 {
     private float _delay = 1f;
@@ -33,7 +34,7 @@ public class Scanner : MonoBehaviour
                 }
             }
 
-            _sender.SendCoordinates(_storage.ReturnFreeResources());
+            _sender.DistributeCoordinates(_storage.GetFreeResources());
 
             yield return wait;
         }

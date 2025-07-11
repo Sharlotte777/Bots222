@@ -463,6 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _base: {fileID: 925616558}
   _text: {fileID: 338448390}
+  _counter: {fileID: 925616559}
 --- !u!114 &338448390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003535645}
   - component: {fileID: 2003535646}
+  - component: {fileID: 2003535647}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1736,7 +1738,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdbd9b102151e642a81a22d13780e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pool: {fileID: 2003535647}
+--- !u!114 &2003535647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003535643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c01432745e616349b1e4ede34ab29ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _prefab: {fileID: -840171128301906977, guid: 932ddb33a6c55eb47b10d029eb0a33f7, type: 3}
+  _storage: {fileID: 2032129101}
 --- !u!1 &2032129099
 GameObject:
   m_ObjectHideFlags: 0

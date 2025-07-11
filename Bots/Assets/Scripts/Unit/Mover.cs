@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(ChangerStatus))]
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -13,16 +12,10 @@ public class Mover : MonoBehaviour
     private Vector3 _nullVector;
     private Vector3 _targetPosition;
     private Base _base;
-    //private AnimatorController _controller;
-
-    //public event Action ResourceIsFound;
-    //public event Action StatusChanged;
-    //public event Action ResourceIsDelivered;
 
     private void Awake()
     {
         _base = _startBase;
-        //_controller = GetComponent<AnimatorController>();
         _nullVector = new Vector3(0, 0, 0);
     }
 
@@ -38,17 +31,12 @@ public class Mover : MonoBehaviour
             if ((transform.position == _targetPosition) && (!_taker.IsGrabbing))
             {
                 _changerStatus.FindResource();
-                //ResourceIsFound?.Invoke();
                 _targetPosition = _spawnpoint.transform.position;
             }
             else if((transform.position == _spawnpoint.transform.position) && (_taker.IsGrabbing))
             {
                 _changerStatus.DeliverResource(_base);
-                //ResourceIsDelivered?.Invoke();
-                //_controller.SetupRunning(false);
                 _targetPosition = _nullVector;
-                //_base.AddScore();
-                //StatusChanged?.Invoke();
             }
             else
             {
@@ -61,6 +49,5 @@ public class Mover : MonoBehaviour
     {
         _targetPosition = position;
         _changerStatus.TurnOnRunning();
-        //_controller.SetupRunning(true);
     }
 }

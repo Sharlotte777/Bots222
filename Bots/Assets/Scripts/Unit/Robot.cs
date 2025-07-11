@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(Taker))]
+[RequireComponent(typeof(ChangerStatus))]
 public class Robot : MonoBehaviour
 {
     private Mover _mover;

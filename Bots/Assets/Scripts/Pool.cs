@@ -1,26 +1,36 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Pool : MonoBehaviour
 {
-    private Resource _prefab;
-    private Queue<Resource> _pool;
+    [SerializeField] private Resource _prefab;
+    [SerializeField] private Storage _storage;
 
-    public Pool(Resource prefab)
-    {
-        _pool = new();
-        _prefab = prefab;
-    }
+    private List<Resource> _pool = new List<Resource>();
+
+    public IEnumerable<Resource> PooledObjects => _pool;
 
     public Resource GetObject()
     {
-        if (_pool.Count == 0)
-        {
-            Resource instance = Object.Instantiate(_prefab/*, _case*/);
+        Resource item = null;
 
-            return instance;
+        foreach (var checkItem in _pool)
+        {
+            if (checkItem.isActiveAndEnabled == false)
+            {
+                item = checkItem;
+                _storage.ChangeResourcesStatus(item);
+                break;
+            }
         }
 
-        return _pool.Dequeue();
+        if (item == null)
+        {
+            item = Object.Instantiate(_prefab);
+            _pool.Add(item);
+        }
+
+        return item;
     }
 }

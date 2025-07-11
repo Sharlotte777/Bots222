@@ -34,7 +34,6 @@ public class Taker : MonoBehaviour
     private void PutAwayResource()
     {
         IsGrabbing = false;
-        //_resource.ChangeStatus();
         _resource.transform.parent = null;
         _resource.gameObject.SetActive(false);
     }

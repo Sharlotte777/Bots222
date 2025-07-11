@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Resource _prefab;
+    [SerializeField] private Pool _pool;
 
-    private float _delay = 2f;
-    private Pool _pool;
-
-    private void Awake() => _pool = new Pool(_prefab);
-
+    private float _delay = 3f;
 
     private void OnEnable()
     {

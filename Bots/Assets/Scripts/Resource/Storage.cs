@@ -15,11 +15,11 @@ public class Storage : MonoBehaviour
         _busyResources = new List<Resource>();
     }
 
-    public List<Resource> ReturnFreeResources() => _freeResources;
+    public List<Resource> GetFreeResources() => new List<Resource>(_freeResources);
 
     public void AddNewResources(Resource resource)
     {
-        if (!_freeResources.Contains(resource) & !_busyResources.Contains(resource))
+        if ((_freeResources.Contains(resource) == false) && (_busyResources.Contains(resource) == false))
         {
             _freeResources.Add(resource);
         }

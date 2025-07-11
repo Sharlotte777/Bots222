@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-[RequireComponent(typeof(Storage))]
 public class Sender : MonoBehaviour
 {
     [SerializeField] private Base _startBase;
@@ -27,9 +25,8 @@ public class Sender : MonoBehaviour
         _storage = storage;
     }
 
-    public void SendCoordinates(List<Resource> resources)
+    public void DistributeCoordinates(List<Resource> resources)
     {
-        Resource resource = new Resource();
         int countOfResources = resources.Count;
         int indexOfFirstResource = 0;
 
@@ -39,7 +36,7 @@ public class Sender : MonoBehaviour
             {
                 if (!unit.IsBusy)
                 {
-                    resource = resources[indexOfFirstResource];
+                    Resource resource = resources[indexOfFirstResource];
                     unit.ReceiveResource(resource);
                     unit.ChangeStatus();
                     _storage.ChangeResourcesStatus(resource);
@@ -47,16 +44,5 @@ public class Sender : MonoBehaviour
                 }
             }
         }
-        //if (resource.IsTaken == false)
-        //{
-        //    foreach (var unit in _units)
-        //    {
-        //        if (!unit.IsBusy && !resource.IsTaken)
-        //        {
-        //            unit.ReceiveResource(resource);
-        //            unit.ChangeStatus();
-        //        }
-        //    }
-        //}
     }
 }
