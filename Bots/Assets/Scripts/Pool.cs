@@ -20,7 +20,7 @@ public class Pool : MonoBehaviour
             if (checkItem.isActiveAndEnabled == false)
             {
                 item = checkItem;
-                _storage.ChangeResourcesStatus(item);
+                _storage.RemoveResource(item);
                 break;
             }
         }

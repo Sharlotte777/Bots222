@@ -10,7 +10,17 @@ public class Base : MonoBehaviour
 
     public string Name { get; private set; }
 
-    public List<Robot> GetUnits() => _units;
+    public List<Robot> GetUnits()
+    {
+        List<Robot> units = new List<Robot>();
+
+        foreach (Robot unit in _units)
+        {
+            units.Add(unit);
+        }
+
+        return units;
+    }
 
     private void Awake()
     {

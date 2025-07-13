@@ -8,7 +8,7 @@ public class ChangerStatus : MonoBehaviour
     private Base _base;
 
     public event Action ResourceIsFound;
-    public event Action StatusChanged;
+    public event Action StatusDeliverChanged;
     public event Action ResourceIsDelivered;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class ChangerStatus : MonoBehaviour
         ResourceIsDelivered?.Invoke();
         _controller.SetupRunning(false);
         _base.AddScore();
-        StatusChanged?.Invoke();
+        StatusDeliverChanged?.Invoke();
     }
 
     public void TurnOnRunning() => _controller.SetupRunning(true);

@@ -25,16 +25,20 @@ public class Storage : MonoBehaviour
         }
     }
 
-    public void ChangeResourcesStatus(Resource resource)
+    public void RemoveResource(Resource resource)
+    {
+        if (_busyResources.Contains(resource))
+        {
+            _busyResources.Remove(resource);
+        }
+    }
+
+    public void AddResource(Resource resource)
     {
         if (_freeResources.Contains(resource))
         {
             _freeResources.Remove(resource);
             _busyResources.Add(resource);
-        }
-        else if (_busyResources.Contains(resource))
-        {
-            _busyResources.Remove(resource);
         }
     }
 }

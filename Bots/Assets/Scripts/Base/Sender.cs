@@ -11,7 +11,7 @@ public class Sender : MonoBehaviour
 
     private void Awake()
     {
-        _base = _startBase;
+        SetBase(_startBase);
         _units = _base.GetUnits();
     }
 
@@ -39,7 +39,7 @@ public class Sender : MonoBehaviour
                     Resource resource = resources[indexOfFirstResource];
                     unit.ReceiveResource(resource);
                     unit.ChangeStatus();
-                    _storage.ChangeResourcesStatus(resource);
+                    _storage.AddResource(resource);
                     countOfResources--;
                 }
             }

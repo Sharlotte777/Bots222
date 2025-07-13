@@ -11,9 +11,9 @@ public class Robot : MonoBehaviour
 
     public bool IsBusy { get; private set; } = false;
 
-    private void OnEnable() => _changerStatus.StatusChanged += ChangeStatus;
+    private void OnEnable() => _changerStatus.StatusDeliverChanged += ChangeStatus;
 
-    private void OnDisable() => _changerStatus.StatusChanged -= ChangeStatus;
+    private void OnDisable() => _changerStatus.StatusDeliverChanged -= ChangeStatus;
 
     private void Awake()
     {
