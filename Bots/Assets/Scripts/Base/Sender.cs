@@ -1,42 +1,50 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Sender : MonoBehaviour
 {
-    [SerializeField] private Base _startBase;
-
-    private List<Robot> _units;
-    private Base _base;
+    private List<Robot> _units = new List<Robot>();
     private Storage _storage;
 
-    private void Awake()
-    {
-        SetBase(_startBase);
-        _units = _base.GetUnits();
-    }
-
-    public void SetBase(Base newBase)
-    {
-        _base = newBase;
-    }
-
-    public void SetStorage(Storage storage)
+    public Sender(Storage storage)
     {
         _storage = storage;
+    }
+
+    public void AddUnit(Robot newUnit)
+    {
+        if (_units != null)
+        {
+            if (_units.Contains(newUnit) == false)
+            {
+                _units.Add(newUnit);
+            }
+        }
+        else
+        {
+            _units.Add(newUnit);
+        }
     }
 
     public void DistributeCoordinates(List<Resource> resources)
     {
         int countOfResources = resources.Count;
-        int indexOfFirstResource = 0;
+        int indexOfFirst = 0;
 
-        foreach (var unit in _units)
+        if (_units != null)
         {
-            if (countOfResources > 0)
+            List <Robot> freeRobots = _units.Where(x => x.IsBusy == false).ToList();
+            int countOfUnits = freeRobots.Count;
+
+            if (freeRobots.Count > 0)
             {
-                if (!unit.IsBusy)
+                int randomIndex = Random.Range(indexOfFirst, countOfUnits);
+
+                if (countOfResources > 0)
                 {
-                    Resource resource = resources[indexOfFirstResource];
+                    Robot unit = freeRobots[randomIndex];
+                    Resource resource = resources[indexOfFirst];
                     unit.ReceiveResource(resource);
                     unit.ChangeStatus();
                     _storage.AddResource(resource);

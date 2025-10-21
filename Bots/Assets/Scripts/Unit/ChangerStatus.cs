@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChangerStatus : MonoBehaviour
 {
     private AnimatorController _controller;
-    private Base _base;
 
     public event Action ResourceIsFound;
     public event Action StatusDeliverChanged;
@@ -18,12 +17,10 @@ public class ChangerStatus : MonoBehaviour
 
     public void FindResource() => ResourceIsFound?.Invoke();
 
-    public void DeliverResource(Base basa)
+    public void DeliverResource()
     {
-        _base = basa;
         ResourceIsDelivered?.Invoke();
         _controller.SetupRunning(false);
-        _base.AddScore();
         StatusDeliverChanged?.Invoke();
     }
 

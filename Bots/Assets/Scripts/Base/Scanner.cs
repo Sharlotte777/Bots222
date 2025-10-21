@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Storage))]
-[RequireComponent(typeof(Sender))]
 public class Scanner : MonoBehaviour
 {
     private float _delay = 1f;
@@ -13,8 +11,7 @@ public class Scanner : MonoBehaviour
     private void Awake()
     {
         _storage = GetComponent<Storage>();
-        _sender = GetComponent<Sender>();
-        _sender.SetStorage(_storage);
+        _sender = new Sender(_storage);
         StartCoroutine(Scanning());
     }
 
@@ -31,6 +28,10 @@ public class Scanner : MonoBehaviour
                 if (obj.TryGetComponent(out Resource resource))
                 {
                     _storage.AddNewResources(resource);
+                }
+                else if (obj.TryGetComponent(out Robot robot))
+                {
+                    _sender.AddUnit(robot);
                 }
             }
 

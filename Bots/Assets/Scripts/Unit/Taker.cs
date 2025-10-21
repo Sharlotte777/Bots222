@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Taker : MonoBehaviour
 {
-    [SerializeField] private Mover _mover;
     [SerializeField] private Transform _hand;
     [SerializeField] private ChangerStatus _changerStatus;
 
@@ -26,15 +25,17 @@ public class Taker : MonoBehaviour
 
     private void TakeResource()
     {
-        IsGrabbing = true;
-        _resource.transform.transform.position = _hand.position;
-        _resource.transform.parent = transform;
+        if (_resource != null)
+        {
+            IsGrabbing = true;
+            _resource.transform.transform.position = _hand.position;
+            _resource.transform.parent = transform;
+        }
     }
 
     private void PutAwayResource()
     {
         IsGrabbing = false;
         _resource.transform.parent = null;
-        _resource.gameObject.SetActive(false);
     }
 }

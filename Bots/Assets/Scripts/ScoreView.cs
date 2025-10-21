@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreView : MonoBehaviour
 {
-    [SerializeField] private Base _base;
-    [SerializeField] private Text _text;
     [SerializeField] private ScoreCounter _counter;
+
+    private Text _text;
 
     private void OnEnable()
     {
@@ -18,5 +17,10 @@ public class ScoreView : MonoBehaviour
         _counter.ScoreIsChanged -= UpdateView;
     }
 
-    private void UpdateView() => _text.text = _base.GetScore().ToString();
+    public void UpdateView()
+    {
+        _text.text = _counter.Score.ToString();
+    }
+
+    public void SetText(Text text) => _text = text;
 }

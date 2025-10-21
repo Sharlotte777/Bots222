@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Pool _pool;
 
-    private float _delay = 3f;
+    private float _delay = 5f;
 
     private void OnEnable()
     {
@@ -23,9 +23,9 @@ public class Spawner : MonoBehaviour
 
         while (enabled)
         {
-            Spawn(GetRandomPosition(), out Resource instance);
-
             yield return spawnTime;
+
+            Spawn(GetRandomPosition(), out Resource instance);
         }
     }
 
@@ -38,9 +38,9 @@ public class Spawner : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        int minCoordinate = -60;
-        int maxCoordinate = 60;
-        int coordinateY = 2;
+        int minCoordinate = -80;
+        int maxCoordinate = 80;
+        int coordinateY = 0;
         float randomX = Random.Range(minCoordinate, maxCoordinate);
         float randomZ = Random.Range(minCoordinate, maxCoordinate);
 
