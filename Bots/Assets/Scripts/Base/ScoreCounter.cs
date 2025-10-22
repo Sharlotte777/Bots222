@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
@@ -7,6 +8,7 @@ public class ScoreCounter : MonoBehaviour
     private const int NumberOfNewBase = 5;
 
     [SerializeField] private FlagPlacer _flagPlacer;
+    [SerializeField] private ControllerOfUnits _controllerOfUnits;
 
     public int Score { get; private set; }
 
@@ -16,7 +18,7 @@ public class ScoreCounter : MonoBehaviour
 
     private void Update()
     {
-        if (Score >= NumberOfNewBase)
+        if ((Score >= NumberOfNewBase) && (_controllerOfUnits.GetCount() > 1))
         {
             if (_flagPlacer.Flag.IsPlaced == true)
             {
@@ -28,7 +30,7 @@ public class ScoreCounter : MonoBehaviour
         }
         else
         {
-            if (_flagPlacer.Flag.IsPlaced == false)
+            if ((_flagPlacer.Flag.IsPlaced == false) || ((_flagPlacer.Flag.IsPlaced == true) && (_controllerOfUnits.GetCount() == 1)))
             {
                 if (Score >= NumberOfNewUnit)
                 {

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\GIT\\Bots\\Bots\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\base\\scorecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\scorecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\spawner\\creatorfirstunits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner\\creatorfirstunits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\base\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|D:\\GIT\\Bots\\Bots\\assets\\scripts\\base\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\base\\controllerofunits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\controllerofunits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|d:\\git\\bots\\bots\\assets\\scripts\\base\\scorecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC47BF86-EF2C-6FB2-1BE8-8B373B286C04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base\\scorecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +31,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CreatorFirstUnits.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Spawner\\CreatorFirstUnits.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner\\CreatorFirstUnits.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Spawner\\CreatorFirstUnits.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Spawner\\CreatorFirstUnits.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA1wBMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T23:28:11.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ControllerOfUnits.cs",
+              "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\ControllerOfUnits.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\ControllerOfUnits.cs",
+              "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\ControllerOfUnits.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base\\ControllerOfUnits.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwCoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T23:26:24.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ScoreCounter.cs",
               "DocumentMoniker": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\ScoreCounter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\ScoreCounter.cs",
               "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\ScoreCounter.cs",
               "RelativeToolTip": "Assets\\Scripts\\Base\\ScoreCounter.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA1wCQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAMBCwBMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T21:34:48.591Z",
               "EditorCaption": ""
@@ -41,7 +75,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Base\\Base.cs",
               "ToolTip": "D:\\GIT\\Bots\\Bots\\Assets\\Scripts\\Base\\Base.cs",
               "RelativeToolTip": "Assets\\Scripts\\Base\\Base.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowCIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T21:34:38.438Z",
               "EditorCaption": ""

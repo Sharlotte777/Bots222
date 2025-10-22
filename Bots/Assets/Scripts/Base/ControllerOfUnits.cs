@@ -9,6 +9,7 @@ public class ControllerOfUnits : MonoBehaviour
     private int _radious = 40;
 
     public List<Robot> Units { get; private set; } = new List<Robot>();
+    public int GetCount() => Units.Count;
 
     private void Start()
     {

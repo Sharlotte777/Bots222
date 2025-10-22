@@ -27,6 +27,5 @@ public class CreatorFirstUnits : MonoBehaviour
         newPosition.y = 0;
         _unit = Instantiate(_unitPrefab, newPosition, Quaternion.identity);
         _unit.SetBasesCoordinates(newPosition);
-        _base.AddUnit(_unit);
     }
 }
