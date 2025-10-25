@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
@@ -10,34 +9,34 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] private FlagPlacer _flagPlacer;
     [SerializeField] private ControllerOfUnits _controllerOfUnits;
 
-    public int Score { get; private set; }
+    public event Action ValueChanged;
+    public event Action ValueCollectedForUnit;
+    public event Action ValueCollectedForBase;
 
-    public event Action ScoreIsChanged;
-    public event Action ScoreIsCollectedForUnit;
-    public event Action ScoreIsCollectedForBase;
+    public int Score { get; private set; }
 
     private void Update()
     {
         if ((Score >= NumberOfNewBase) && (_controllerOfUnits.GetCount() > 1))
         {
-            if (_flagPlacer.Flag.IsPlaced == true)
+            if (_flagPlacer.Flag.Placed == true)
             {
                 AddScore();
-                ScoreIsCollectedForBase?.Invoke();
+                ValueCollectedForBase?.Invoke();
                 Score = 0;
-                ScoreIsChanged?.Invoke();
+                ValueChanged?.Invoke();
             }
         }
         else
         {
-            if ((_flagPlacer.Flag.IsPlaced == false) || ((_flagPlacer.Flag.IsPlaced == true) && (_controllerOfUnits.GetCount() == 1)))
+            if ((_flagPlacer.Flag.Placed == false) || ((_flagPlacer.Flag.Placed == true) && (_controllerOfUnits.GetCount() == 1)))
             {
                 if (Score >= NumberOfNewUnit)
                 {
                     AddScore();
-                    ScoreIsCollectedForUnit?.Invoke();
+                    ValueCollectedForUnit?.Invoke();
                     Score = 0;
-                    ScoreIsChanged?.Invoke();
+                    ValueChanged?.Invoke();
                 }
             }
         }
@@ -46,6 +45,6 @@ public class ScoreCounter : MonoBehaviour
     public void AddScore()
     { 
         Score++;
-        ScoreIsChanged?.Invoke();
+        ValueChanged?.Invoke();
     }
 }

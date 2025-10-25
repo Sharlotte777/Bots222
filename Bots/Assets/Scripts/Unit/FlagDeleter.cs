@@ -26,7 +26,7 @@ public class FlagDeleter : MonoBehaviour
             if (obj.TryGetComponent(out Flag flag))
             {
                 _creator.CreateBase(flag.Position);
-                flag.ChangeStatus();
+                flag.ChangeStatusOfPlacement();
                 flag.gameObject.SetActive(false);
             }
         }

@@ -10,7 +10,7 @@ public class FlagPlacer : MonoBehaviour
     {
         position.y = 0;
         Flag = Instantiate(_flagPrefab, position, Quaternion.identity);
-        Flag.ChangeStatus();
+        Flag.ChangeStatusOfPlacement();
     }
 
     public void MoveFlag(Vector3 position)

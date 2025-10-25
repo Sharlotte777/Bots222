@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Storage))]
 public class Scanner : MonoBehaviour
 {
     private float _delay = 1f;

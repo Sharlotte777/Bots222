@@ -4,17 +4,20 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Pool _pool;
+    [SerializeField] private Storage _storage;
 
     private float _delay = 5f;
+    private Coroutine _coroutine;
 
     private void OnEnable()
     {
-        StartCoroutine(Spawning());
+        _coroutine = StartCoroutine(Spawning());
     }
 
     private void OnDisable()
     {
-        StopCoroutine(Spawning());
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
     }
 
     private IEnumerator Spawning()
@@ -25,13 +28,14 @@ public class Spawner : MonoBehaviour
         {
             yield return spawnTime;
 
-            Spawn(GetRandomPosition(), out Resource instance);
+            Spawn(GetRandomPosition());
         }
     }
 
-    private void Spawn(Vector3 position, out Resource instance)
+    private void Spawn(Vector3 position)
     {
-        instance = _pool.GetObject();
+        Resource instance = _pool.GetObject();
+        _storage.RemoveResource(instance);
         instance.transform.position = position;
         instance.gameObject.SetActive(true);
     }

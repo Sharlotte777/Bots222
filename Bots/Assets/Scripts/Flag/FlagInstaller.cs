@@ -8,11 +8,11 @@ public class FlagInstaller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            CheckObject();
+            DetectObject();
         }
     }
 
-    private void CheckObject()
+    private void DetectObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

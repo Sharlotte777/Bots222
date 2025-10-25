@@ -6,12 +6,13 @@ public class CreatorBase : MonoBehaviour
 
     private CreatorText _creatorText;
 
-    public Base Base { get; private set; }
+    private Base _base;
 
-    public void CreateBase(Vector3 position)
+    public Base CreateBase(Vector3 position)
     {
-        Base = Object.Instantiate(_prefab, position, Quaternion.identity);
-        _creatorText = new CreatorText(Base);
+        _base = Object.Instantiate(_prefab, position, Quaternion.identity);
+        _creatorText = new CreatorText(_base);
         _creatorText.CreateText();
+        return _base;
     }
 }

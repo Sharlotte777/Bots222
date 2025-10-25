@@ -9,12 +9,12 @@ public class ScoreView : MonoBehaviour
 
     private void OnEnable()
     {
-        _counter.ScoreIsChanged += UpdateView;
+        _counter.ValueChanged += UpdateView;
     }
 
     private void OnDisable()
     {
-        _counter.ScoreIsChanged -= UpdateView;
+        _counter.ValueChanged -= UpdateView;
     }
 
     public void UpdateView()
@@ -22,5 +22,8 @@ public class ScoreView : MonoBehaviour
         _text.text = _counter.Score.ToString();
     }
 
-    public void SetText(Text text) => _text = text;
+    public void SetText(Text text)
+    {
+        _text = text;
+    }
 }

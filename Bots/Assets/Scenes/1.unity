@@ -530,7 +530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: -840171128301906977, guid: 932ddb33a6c55eb47b10d029eb0a33f7, type: 3}
-  _storage: {fileID: 1607557521}
 --- !u!114 &1476171937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pool: {fileID: 1476171936}
+  _storage: {fileID: 1607557521}
 --- !u!4 &1476171938
 Transform:
   m_ObjectHideFlags: 0

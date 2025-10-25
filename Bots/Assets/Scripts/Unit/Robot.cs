@@ -14,17 +14,22 @@ public class Robot : MonoBehaviour
     {
         _changerStatus.StatusDeliverChanged += ChangeStatus;
         _mover.RobotAtFlag += ChangeStatus;
+        _mover.ResourceFound += _changerStatus.FindResource;
+        _mover.ResourceDelivered += _changerStatus.DeliverResource;
     }
 
     private void OnDisable()
     { 
         _changerStatus.StatusDeliverChanged -= ChangeStatus;
         _mover.RobotAtFlag -= ChangeStatus;
+        _mover.ResourceFound -= _changerStatus.FindResource;
+        _mover.ResourceDelivered -= _changerStatus.DeliverResource;
     }
 
     public void ReceiveResource(Resource resource)
     {
         _mover.ChangePosition(resource.transform.position);
+        _changerStatus.TurnOnRunning();
         _taker.ChangeResource(resource);
     }
 

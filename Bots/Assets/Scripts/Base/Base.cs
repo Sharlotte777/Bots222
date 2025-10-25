@@ -22,14 +22,14 @@ public class Base : MonoBehaviour
 
     private void OnEnable()
     {
-        _scoreCounter.ScoreIsCollectedForUnit += _creatorUnit.CreateUnit;
-        _scoreCounter.ScoreIsCollectedForBase += _controllerOfUnits.SendRobotToFlag;
+        _scoreCounter.ValueCollectedForUnit += _creatorUnit.CreateUnit;
+        _scoreCounter.ValueCollectedForBase += _controllerOfUnits.SendRobotToFlag;
     }
 
     private void OnDisable()
     {
-        _scoreCounter.ScoreIsCollectedForUnit -= _creatorUnit.CreateUnit;
-        _scoreCounter.ScoreIsCollectedForBase -= _controllerOfUnits.SendRobotToFlag;
+        _scoreCounter.ValueCollectedForUnit -= _creatorUnit.CreateUnit;
+        _scoreCounter.ValueCollectedForBase -= _controllerOfUnits.SendRobotToFlag;
     }
 
     public void AddUnit(Robot robot)
@@ -58,7 +58,7 @@ public class Base : MonoBehaviour
     {
         List<Robot> units = new List<Robot>();
 
-        foreach (Robot unit in _controllerOfUnits.Units)
+        foreach (Robot unit in _controllerOfUnits.GetUnits())
         {
             units.Add(unit);
         }

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Flag : MonoBehaviour
 {
-    private bool _isPlaced = false;
+    private bool _Placed = false;
 
     public Vector3 Position => transform.position;
-    public bool IsPlaced => _isPlaced;
+    public bool Placed => _Placed;
 
-    public void ChangeStatus() => _isPlaced = !_isPlaced;
+    public void ChangeStatusOfPlacement() => _Placed = !_Placed;
 }
