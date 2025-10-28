@@ -3,12 +3,18 @@ using UnityEngine.UI;
 
 public class CreatorText : MonoBehaviour
 {
-    private Base _base;
+    [SerializeField] private Base _base;
+
     private int _additionalValue = 50;
 
-    public CreatorText(Base basa)
+    //public CreatorText(Base basa)
+    //{
+    //    _base = basa;
+    //}
+
+    private void Awake()
     {
-        _base = basa;
+        CreateText();
     }
 
     public void CreateText()

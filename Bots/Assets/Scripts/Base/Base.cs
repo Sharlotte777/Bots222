@@ -10,6 +10,7 @@ public class Base : MonoBehaviour
     private CreatorUnit _creatorUnit;
     private ControllerOfUnits _controllerOfUnits;
     private ScoreView _scoreView;
+    private CheckerValue _checkerValue;
 
     private void Awake()
     {
@@ -18,18 +19,19 @@ public class Base : MonoBehaviour
         _scoreCounter = GetComponent<ScoreCounter>();
         _creatorUnit = GetComponent<CreatorUnit>();
         _scoreView = GetComponent<ScoreView>();
+        _checkerValue = GetComponent<CheckerValue>();
     }
 
     private void OnEnable()
     {
-        _scoreCounter.ValueCollectedForUnit += _creatorUnit.CreateUnit;
-        _scoreCounter.ValueCollectedForBase += _controllerOfUnits.SendRobotToFlag;
+        _checkerValue.ValueCollectedForUnit += _creatorUnit.CreateUnit;
+        _checkerValue.ValueCollectedForBase += _controllerOfUnits.SendRobotToFlag;
     }
 
     private void OnDisable()
     {
-        _scoreCounter.ValueCollectedForUnit -= _creatorUnit.CreateUnit;
-        _scoreCounter.ValueCollectedForBase -= _controllerOfUnits.SendRobotToFlag;
+        _checkerValue.ValueCollectedForUnit -= _creatorUnit.CreateUnit;
+        _checkerValue.ValueCollectedForBase -= _controllerOfUnits.SendRobotToFlag;
     }
 
     public void AddUnit(Robot robot)
@@ -66,5 +68,8 @@ public class Base : MonoBehaviour
         return units;
     }
 
-    public void AddScore() => _scoreCounter.AddScore();
+    public void AddScore() 
+    {
+        _checkerValue.AddValue();
+    }
 }

@@ -21,7 +21,10 @@ public class Taker : MonoBehaviour
         _changerStatus.ResourceIsDelivered -= PutAwayResource;
     }
 
-    public void ChangeResource(Resource resource) => _resource = resource;
+    public void ChangeResource(Resource resource)
+    {
+        _resource = resource;
+    }
 
     private void TakeResource()
     {

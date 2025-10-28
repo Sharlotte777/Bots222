@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class FlagDeleter : MonoBehaviour
 {
-    [SerializeField] private Mover _mover;
+    [SerializeField] private AppointerTarget _appointer;
     [SerializeField] private CreatorBase _creator;
 
     private int _radious = 50;
 
     private void OnEnable()    
     {
-        _mover.RobotAtFlag += DeleteFlag;
+        _appointer.RobotAtFlag += DeleteFlag;
     }
 
     private void OnDisable()
     {
-        _mover.RobotAtFlag -= DeleteFlag;
+        _appointer.RobotAtFlag -= DeleteFlag;
     }
 
     public void DeleteFlag()
