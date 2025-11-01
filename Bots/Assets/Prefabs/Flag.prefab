@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5765058048712926966}
   - component: {fileID: 1791180376363452938}
   - component: {fileID: 3555594013784014049}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flag2_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5720753462260015375}
   - component: {fileID: 3573369252698549211}
   - component: {fileID: 8105099871618846266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flag2metal1_high
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4215903053481691920}
   - component: {fileID: 4580033443961321911}
   - component: {fileID: 7730117026346435666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 8193783272097102955}
   - component: {fileID: 2259595744968830718}
   - component: {fileID: 8249749262751696126}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flag2metal2_high
   m_TagString: Untagged
   m_Icon: {fileID: 0}

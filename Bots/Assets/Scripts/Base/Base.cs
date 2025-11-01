@@ -1,42 +1,39 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent((typeof(FlagPlacer)))]
+[RequireComponent((typeof(ControllerOfUnits)))]
+[RequireComponent((typeof(ScoreView)))]
 [RequireComponent((typeof(CreatorUnit)))]
+[RequireComponent(typeof(Storage))]
 public class Base : MonoBehaviour
 {
-    private ScoreCounter _scoreCounter;
-    private FlagPlacer _flafPlacer;
+    private const int NumberOfNewUnit = 3;
+    private const int NumberOfNewBase = 5;
+
+    private FlagPlacer _flagPlacer;
     private CreatorUnit _creatorUnit;
     private ControllerOfUnits _controllerOfUnits;
     private ScoreView _scoreView;
-    private CheckerValue _checkerValue;
+    private Storage _scoreCounter;
 
     private void Awake()
     {
-        _flafPlacer = GetComponent<FlagPlacer>();
+        _flagPlacer = GetComponent<FlagPlacer>();
         _controllerOfUnits = GetComponent<ControllerOfUnits>();
-        _scoreCounter = GetComponent<ScoreCounter>();
         _creatorUnit = GetComponent<CreatorUnit>();
         _scoreView = GetComponent<ScoreView>();
-        _checkerValue = GetComponent<CheckerValue>();
+        _scoreCounter = GetComponent<Storage>();
     }
 
     private void OnEnable()
     {
-        _checkerValue.ValueCollectedForUnit += _creatorUnit.CreateUnit;
-        _checkerValue.ValueCollectedForBase += _controllerOfUnits.SendRobotToFlag;
+        _scoreCounter.ValueChanged += HandleScoreChange;
     }
 
     private void OnDisable()
     {
-        _checkerValue.ValueCollectedForUnit -= _creatorUnit.CreateUnit;
-        _checkerValue.ValueCollectedForBase -= _controllerOfUnits.SendRobotToFlag;
-    }
-
-    public void AddUnit(Robot robot)
-    {
-        _controllerOfUnits.AddNewUnit(robot);
+        _scoreCounter.ValueChanged -= HandleScoreChange;
     }
 
     public void InstallText(Text text)
@@ -44,32 +41,51 @@ public class Base : MonoBehaviour
         _scoreView.SetText(text);
     }
 
-    public void SetFlag(Vector3 position)
+    public void PlaceFlag(Vector3 position)
     {
-        if (_flafPlacer.Flag != null)
+        if (_flagPlacer.Flag != null)
         {
-            _flafPlacer.MoveFlag(position);
+            _flagPlacer.MoveFlag(position);
         }
         else
         {
-            _flafPlacer.PlaceFlag(position);
+            _flagPlacer.PlaceFlag(position);
         }
     }
 
-    public List<Robot> GetUnits()
+    private void HandleScoreChange()
     {
-        List<Robot> units = new List<Robot>();
-
-        foreach (Robot unit in _controllerOfUnits.GetUnits())
+        if ((_scoreCounter.Score >= NumberOfNewBase) && (_controllerOfUnits.GetCount() > 1))
         {
-            units.Add(unit);
+            if (_flagPlacer.Flag.Placed == true)
+            {
+                _controllerOfUnits.SendRobotToFlag();
+                _scoreCounter.SpendPoints(NumberOfNewBase);
+                _scoreCounter.ActiveEvent();
+            }
         }
-
-        return units;
+        else
+        {
+            if ((_flagPlacer.Flag.Placed == false) || ((_flagPlacer.Flag.Placed == true) && (_controllerOfUnits.GetCount() == 1)))
+            {
+                if (_scoreCounter.Score >= NumberOfNewUnit)
+                {
+                    _creatorUnit.CreateUnit();
+                    _scoreCounter.SpendPoints(NumberOfNewUnit);
+                    _scoreCounter.ActiveEvent();
+                }
+            }
+        }
     }
 
-    public void AddScore() 
+    public Vector3 GetFlagPosition()
     {
-        _checkerValue.AddValue();
+        return _flagPlacer.Flag.Position;
+    }
+
+    public void AddScore()
+    {
+        _scoreCounter.AddScore();
+        _scoreCounter.ActiveEvent();
     }
 }

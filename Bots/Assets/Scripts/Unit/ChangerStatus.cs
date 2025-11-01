@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(AnimatorController))]
+[RequireComponent(typeof(EventActivator))]
 public class ChangerStatus : MonoBehaviour
 {
-    private AnimatorController _controller;
+    private EventActivator _controller;
 
     public event Action ResourceIsFound;
     public event Action StatusDeliverChanged;
@@ -12,7 +12,7 @@ public class ChangerStatus : MonoBehaviour
 
     private void Awake()
     {
-        _controller = GetComponent<AnimatorController>();
+        _controller = GetComponent<EventActivator>();
     }
 
     public void FindResource() => ResourceIsFound?.Invoke();
@@ -20,9 +20,12 @@ public class ChangerStatus : MonoBehaviour
     public void DeliverResource()
     {
         ResourceIsDelivered?.Invoke();
-        _controller.SetupRunning(false);
+        _controller.TurnOff();
         StatusDeliverChanged?.Invoke();
     }
 
-    public void TurnOnRunning() => _controller.SetupRunning(true);
+    public void TurnOnRunning()
+    {
+        _controller.TurnOn();
+    }
 }

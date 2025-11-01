@@ -61,10 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Unit\Robot.cs" />
-    <Compile Include="Assets\Scripts\Resource\Storage.cs" />
     <Compile Include="Assets\Scripts\Flag\Flag.cs" />
     <Compile Include="Assets\Scripts\Flag\FlagPlacer.cs" />
-    <Compile Include="Assets\Scripts\Base\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\Base\Collector.cs" />
     <Compile Include="Assets\Scripts\Spawner\CreatorFirstObjects.cs" />
     <Compile Include="Assets\Scripts\Spawner\CreatorFirstUnits.cs" />
@@ -73,7 +71,6 @@
     <Compile Include="Assets\Scripts\Unit\Mover.cs" />
     <Compile Include="Assets\Scripts\Base\Base.cs" />
     <Compile Include="Assets\Scripts\Plane.cs" />
-    <Compile Include="Assets\Scripts\Unit\AnimatorController.cs" />
     <Compile Include="Assets\Scripts\Flag\FlagInstaller.cs" />
     <Compile Include="Assets\Scripts\Base\CreatorUnit.cs" />
     <Compile Include="Assets\Scripts\Spawner\CreatorBase.cs" />
@@ -83,7 +80,9 @@
     <Compile Include="Assets\Scripts\Resource\Resource.cs" />
     <Compile Include="Assets\Scripts\ScoreView.cs" />
     <Compile Include="Assets\Scripts\Unit\FlagDeleter.cs" />
-    <Compile Include="Assets\Scripts\Base\CheckerValue.cs" />
+    <Compile Include="Assets\Scripts\Base\Storage.cs" />
+    <Compile Include="Assets\Scripts\Unit\EventActivator.cs" />
+    <Compile Include="Assets\Scripts\Resource\Database.cs" />
     <Compile Include="Assets\Scripts\Base\ControllerOfUnits.cs" />
     <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
     <Compile Include="Assets\Scripts\Unit\Taker.cs" />

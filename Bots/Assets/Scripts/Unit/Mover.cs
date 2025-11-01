@@ -24,7 +24,7 @@ public class Mover : MonoBehaviour
         }
     }
 
-    public void ChangePosition(Vector3 position)
+    public void SetPosition(Vector3 position)
     {
         _targetPosition = position;
     }

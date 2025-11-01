@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Pool _pool;
-    [SerializeField] private Storage _storage;
+    [SerializeField] private Database _storage;
 
     private float _delay = 5f;
     private Coroutine _coroutine;

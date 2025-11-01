@@ -4,7 +4,6 @@ using UnityEngine;
 public class Pool : MonoBehaviour
 {
     [SerializeField] private Resource _prefab;
-    //[SerializeField] private Storage _storage;
 
     private List<Resource> _pool = new List<Resource>();
 
@@ -19,7 +18,6 @@ public class Pool : MonoBehaviour
             if (checkItem.isActiveAndEnabled == false)
             {
                 item = checkItem;
-                //_storage.RemoveResource(item);
                 break;
             }
         }

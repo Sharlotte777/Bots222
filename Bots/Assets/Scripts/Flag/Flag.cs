@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class Flag : MonoBehaviour
 {
-    private bool _Placed = false;
+    private bool _placed;
 
     public Vector3 Position => transform.position;
-    public bool Placed => _Placed;
+    public bool Placed => _placed;
 
-    public void ChangeStatusOfPlacement() => _Placed = !_Placed;
+    public void Remove() 
+    {
+        _placed = false;
+    }
+
+    public void Place()
+    {
+        _placed = true;
+    }
 }

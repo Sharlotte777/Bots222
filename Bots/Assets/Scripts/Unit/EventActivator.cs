@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
-public class AnimatorController : MonoBehaviour
+public class EventActivator : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
@@ -10,5 +10,13 @@ public class AnimatorController : MonoBehaviour
 
     private void Awake() => _animator = GetComponent<Animator>();
 
-    public void SetupRunning(bool isRunning) => _animator.SetBool(IsRunning, isRunning);
+    public void TurnOn()
+    {
+        _animator.SetBool(IsRunning, true);
+    }
+
+    public void TurnOff()
+    {
+        _animator.SetBool(IsRunning, false);
+    }
 }

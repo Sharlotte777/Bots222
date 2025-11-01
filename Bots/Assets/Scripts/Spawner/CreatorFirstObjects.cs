@@ -10,7 +10,7 @@ public class CreatorFirstObjects : MonoBehaviour
 
     private void Awake()
     {
-         _creatorUnits = new CreatorFirstUnits(_unitPrefab, _creatorBase.CreateBase(startPosition));
+        _creatorUnits = new CreatorFirstUnits(_unitPrefab, _creatorBase.CreateBase(startPosition));
         _creatorUnits.CreateFirstUnits();
     }
 }

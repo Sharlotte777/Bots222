@@ -3,19 +3,18 @@ using UnityEngine.UI;
 
 public class ScoreView : MonoBehaviour
 {
-    [SerializeField] private CheckerValue _checkerValue;
-    [SerializeField] private ScoreCounter _counter;
+    [SerializeField] private Storage _counter;
 
     private Text _text;
 
     private void OnEnable()
     {
-        _checkerValue.ValueChanged += UpdateView;
+        _counter.ValueChanged += UpdateView;
     }
 
     private void OnDisable()
     {
-        _checkerValue.ValueChanged -= UpdateView;
+        _counter.ValueChanged -= UpdateView;
     }
 
     public void UpdateView()

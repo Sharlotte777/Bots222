@@ -37,13 +37,13 @@ public class AppointerTarget : MonoBehaviour
         {
             ResourceFound?.Invoke();
             _targetPosition = _spawnpoint;
-            _mover.ChangePosition(_targetPosition);
+            _mover.SetPosition(_targetPosition);
         }
         else if ((transform.position == _spawnpoint) && (_taker.IsGrabbing))
         {
             ResourceDelivered?.Invoke();
             _targetPosition = _nullVector;
-            _mover.ChangePosition(_targetPosition);
+            _mover.SetPosition(_targetPosition);
         }
     }
 
@@ -60,7 +60,7 @@ public class AppointerTarget : MonoBehaviour
     public void ChangePosition(Vector3 position)
     {
         _targetPosition = position;
-        _mover.ChangePosition(position);
+        _mover.SetPosition(position);
     }
 
     private void SetUpSpawnpoint(Vector3 basa)

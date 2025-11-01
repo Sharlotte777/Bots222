@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Robot : MonoBehaviour
@@ -11,12 +12,14 @@ public class Robot : MonoBehaviour
     public bool IsBusy { get; private set; } = false;
     public Vector3 Position { get; private set; }
 
+    public event Action ObjectDelivered;
+
     private void OnEnable()
     {
         _changerStatus.StatusDeliverChanged += ChangeStatus;
         _appointerTarget.RobotAtFlag += ChangeStatus;
         _appointerTarget.ResourceFound += _changerStatus.FindResource;
-        _appointerTarget.ResourceDelivered += _changerStatus.DeliverResource;
+        _appointerTarget.ResourceDelivered += TurnOnAction;
     }
 
     private void OnDisable()
@@ -24,7 +27,13 @@ public class Robot : MonoBehaviour
         _changerStatus.StatusDeliverChanged -= ChangeStatus;
         _appointerTarget.RobotAtFlag -= ChangeStatus;
         _appointerTarget.ResourceFound -= _changerStatus.FindResource;
-        _appointerTarget.ResourceDelivered -= _changerStatus.DeliverResource;
+        _appointerTarget.ResourceDelivered -= TurnOnAction;
+    }
+
+    public void TurnOnAction()
+    {
+        _changerStatus.DeliverResource();
+        ObjectDelivered?.Invoke();
     }
 
     public void ReceiveResource(Resource resource)

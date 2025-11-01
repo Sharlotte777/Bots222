@@ -5,9 +5,9 @@ using UnityEngine;
 public class Sender : MonoBehaviour
 {
     private List<Robot> _units = new List<Robot>();
-    private Storage _storage;
+    private Database _storage;
 
-    public Sender(Storage storage)
+    public Sender(Database storage)
     {
         _storage = storage;
     }
@@ -27,9 +27,8 @@ public class Sender : MonoBehaviour
         }
     }
 
-    public void DistributeCoordinates(List<Resource> resources)
+    public void DistributeCoordinates()
     {
-        int countOfResources = resources.Count;
         int indexOfFirst = 0;
 
         if (_units != null)
@@ -40,15 +39,13 @@ public class Sender : MonoBehaviour
             if (freeRobots.Count > 0)
             {
                 int randomIndex = Random.Range(indexOfFirst, countOfUnits);
+                Resource resource = _storage.GetFreeResource();
 
-                if (countOfResources > 0)
+                if (resource != null)
                 {
                     Robot unit = freeRobots[randomIndex];
-                    Resource resource = resources[indexOfFirst];
                     unit.ReceiveResource(resource);
                     unit.ChangeStatus();
-                    _storage.AddResource(resource);
-                    countOfResources--;
                 }
             }
         }

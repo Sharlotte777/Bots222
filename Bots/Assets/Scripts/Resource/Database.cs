@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Scanner))]
 [RequireComponent(typeof(Sender))]
-public class Storage : MonoBehaviour
+public class Database : MonoBehaviour
 {
     private List<Resource> _freeResources;
     private List<Resource> _busyResources;
@@ -13,8 +13,6 @@ public class Storage : MonoBehaviour
         _freeResources = new List<Resource>();
         _busyResources = new List<Resource>();
     }
-
-    public List<Resource> GetFreeResources() => new List<Resource>(_freeResources);
 
     public void AddNewResources(Resource resource)
     {
@@ -32,12 +30,18 @@ public class Storage : MonoBehaviour
         }
     }
 
-    public void AddResource(Resource resource)
+    public Resource GetFreeResource()
     {
-        if (_freeResources.Contains(resource))
+        Resource resource = null;
+        int firstIndex = 0;
+
+        if (_freeResources.Count > 0)
         {
+            resource = _freeResources[firstIndex];
             _freeResources.Remove(resource);
             _busyResources.Add(resource);
         }
+
+        return resource;
     }
 }

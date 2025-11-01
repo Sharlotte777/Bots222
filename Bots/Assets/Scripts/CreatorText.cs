@@ -7,11 +7,6 @@ public class CreatorText : MonoBehaviour
 
     private int _additionalValue = 50;
 
-    //public CreatorText(Base basa)
-    //{
-    //    _base = basa;
-    //}
-
     private void Awake()
     {
         CreateText();

@@ -1,17 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Storage))]
+[RequireComponent(typeof(Database))]
 public class Scanner : MonoBehaviour
 {
+    [SerializeField] private LayerMask _layerMask;
+
     private float _delay = 1f;
     private float _radious = 350f;
-    private Storage _storage;
+    private Database _storage;
     private Sender _sender;
 
     private void Awake()
     {
-        _storage = GetComponent<Storage>();
+        _storage = GetComponent<Database>();
         _sender = new Sender(_storage);
         StartCoroutine(Scanning());
     }
@@ -22,7 +24,7 @@ public class Scanner : MonoBehaviour
 
         while (enabled)
         {
-            Collider[] objects = Physics.OverlapSphere(transform.position, _radious);
+            Collider[] objects = Physics.OverlapSphere(transform.position, _radious, _layerMask);
 
             foreach (Collider obj in objects)
             {
@@ -36,7 +38,7 @@ public class Scanner : MonoBehaviour
                 }
             }
 
-            _sender.DistributeCoordinates(_storage.GetFreeResources());
+            _sender.DistributeCoordinates();
 
             yield return wait;
         }
